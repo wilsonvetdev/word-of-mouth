@@ -9,4 +9,8 @@ Rails.application.routes.draw do
   get '/colleges', to: 'colleges#index'
   get '/colleges/:id', to: 'colleges#show', as: :college 
   
+  get '/users', to: 'users#index'
+  get '/users/new', to: 'users#new', as: :new_user
+  get '/users/:id', to: 'users#show', as: :user
+  post '/users', to: 'users#create'
 end
