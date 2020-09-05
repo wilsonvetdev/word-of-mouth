@@ -1,0 +1,27 @@
+
+<%= form_tag colleges_path, :method => 'get' do%>
+<%= text_field_tag :search, params[:search] %>
+<%= submit_tag 'Search Colleges'%>
+<% end %>
+
+<table>
+    <thead>
+    <tr>
+    <th>Name</th>
+    <th>City</th>
+    <th>State</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <% @colleges.each do |college| %>
+    <tr>
+        <td> <%= college.name %> </td>
+        <td> <%= college.city %> </td>
+        <td> <%= college.state %> </td>
+        <td> <%= link_to 'show', college_path(college) %> </td>
+
+    </tr>
+    <% end %>
+    </tbody>
+</table>
