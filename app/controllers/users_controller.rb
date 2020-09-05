@@ -1,7 +1,17 @@
 class UsersController < ApplicationController
 
-    def index 
+    def login
 
+    end
+
+    def handle_login
+        
+        @user = User.find_by(username: params[:username])
+
+    end
+
+    def index 
+        
     end
 
     def show
@@ -13,7 +23,7 @@ class UsersController < ApplicationController
     end
 
     def create 
-        @user = User.create(user_params)
+        @user = User.create!(user_params)
         if @user.valid?
             redirect_to user_path(@user)
         else 
