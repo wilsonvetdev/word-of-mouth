@@ -7,7 +7,8 @@ class CollegesController < ApplicationController
     end
 
     def show 
-        @colleges = College.find(params[:id])
+        @college = College.find(params[:id])
+        @professors = @college.professors
     end
 
     private 
