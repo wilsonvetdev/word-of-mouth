@@ -4,12 +4,12 @@ class ProfessorsController < ApplicationController
         @professors = Professor.search(params[:search]) 
     end
 
-    def show
-
-    end
-
     def new
         @professor = Professor.new
+    end
+
+    def show
+        @professor = Professor.find(params[:id])
     end
 
     def edit 
