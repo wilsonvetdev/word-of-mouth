@@ -10,6 +10,7 @@ class ProfessorsController < ApplicationController
 
     def show
         @professor = Professor.find(params[:id])
+        session[:current_professor] = @professor.id
     end
 
     def edit 

@@ -1,0 +1,13 @@
+<h1> Craft your review here for <%= @current_professor.full_name %>! </h1>
+
+<% if @error %>
+<%= @error %>
+<% end %>
+
+<%= form_for @review do |f| %>
+<%= f.label :rating %>
+<%= f.number_field :rating %>
+<%= f.label :content %>
+<%= f.text_area :content %>
+<%= f.submit "submit review" %>
+<% end %>
