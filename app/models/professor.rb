@@ -1,5 +1,6 @@
 class Professor < ApplicationRecord
     has_many :workplaces
+    has_many :reviews
     
     validates :first_name, presence: true
     validates :last_name, presence: true
@@ -11,5 +12,9 @@ class Professor < ApplicationRecord
         else 
             @professors = Professor.all
         end
+    end
+
+    def full_name 
+        "#{self.first_name} #{self.last_name}"
     end
 end

@@ -6,7 +6,6 @@ Rails.application.routes.draw do
   get '/professors/new', to: 'professors#new', as: :new_professor 
   post '/professors', to: 'professors#create'
   get '/professors/:id', to: 'professors#show', as: :professor
-  
 
   get '/colleges', to: 'colleges#index'
   get '/colleges/:id', to: 'colleges#show', as: :college 
@@ -20,7 +19,7 @@ Rails.application.routes.draw do
   post '/handle_login', to: 'users#handle_login'
   delete '/logout', to: 'users#logout', as: :logout
 
-  get '/reviews', to: 'reviews#new', as: :new_review
+  get '/reviews/new', to: 'reviews#new', as: :new_review
   post '/reviews', to: 'reviews#create'
 
 end
