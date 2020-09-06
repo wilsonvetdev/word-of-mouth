@@ -1,5 +1,9 @@
 <h1> Sign in page </h1>
 
+<% if @error %>
+<p> <%= @error %> </p>
+<% end %>
+
 <%= form_tag "/handle_login" do %>
 <%= label_tag :username %>
 <%= text_field_tag :username %>
