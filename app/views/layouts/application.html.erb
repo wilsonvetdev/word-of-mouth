@@ -15,8 +15,12 @@
     <h1> <%= link_to "Word Of Mouth", "/" %> <h1>
         <div>
           <ul>
-            <li> Sign In </li>
-            <li> Sign Out</li>
+          <% if user_logged_in? %>
+            <li> Hi <%= @current_user.username %> </li>
+            <li> <%= button_to "Log out", logout_path, method: :delete %> </li>
+          <% else %>
+            <li> <%= link_to "Log In", login_path %> </li>
+          <% end %>
           </ul>
         </div>
   </nav>

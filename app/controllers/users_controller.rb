@@ -10,6 +10,7 @@ class UsersController < ApplicationController
         # Handle the request by finding the user in database first, username is unique**
         # if user exist(truthy) and password pass authentication
         if @user && @user.authenticate(params[:password])
+            session[:user_id] = @user.id
             redirect_to user_path(@user)
         else
             flash[:error] = "Incorrect username or password!"
@@ -17,12 +18,14 @@ class UsersController < ApplicationController
         end
     end
 
+    def logout
+        byebug
+    end
+
     def index 
-        
     end
 
     def show
-        @user = User.find(params[:id])
     end
 
     def new 
