@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
 
-    before_action :set_current_user 
+    before_action :authorized_access
     helper_method :user_logged_in?
 
     def set_current_user
@@ -9,6 +9,10 @@ class ApplicationController < ActionController::Base
 
     def user_logged_in?
         !set_current_user.nil?
+    end
+
+    def authorized_access
+        redirect_to login_path unless user_logged_in?
     end
 
 end

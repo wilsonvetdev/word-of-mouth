@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+    skip_before_action :authorized_access, only: [:login, :handle_login, :new, :create]
 
     def login
         @error = flash[:error]
@@ -19,13 +20,8 @@ class UsersController < ApplicationController
     end
 
     def logout
-        byebug
-    end
-
-    def index 
-    end
-
-    def show
+        session[:user_id] = nil 
+        redirect_to login_path
     end
 
     def new 
@@ -33,9 +29,10 @@ class UsersController < ApplicationController
     end
 
     def create 
-        @user = User.create(user_params)
-        if @user.valid?
-            redirect_to user_path(@user)
+        @current_user = User.create(user_params)
+        if @current_user.valid?
+            session[:user_id] = @current_user.id
+            redirect_to user_path(@current_user)
         else 
             redirect_to new_user_path
         end
