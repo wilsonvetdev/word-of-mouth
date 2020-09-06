@@ -1,6 +1,7 @@
 class ReviewsController < ApplicationController
 
     def new 
+        @error = flash[:error][0]
         @review = Review.new
         @current_professor = Professor.find_by(id: session[:current_professor])
     end
@@ -13,6 +14,7 @@ class ReviewsController < ApplicationController
         if @review.save
             redirect_to professor_path(@current_professor)
         else
+            flash[:error] = @review.errors.full_messages
             redirect_to new_review_path
         end
     end
