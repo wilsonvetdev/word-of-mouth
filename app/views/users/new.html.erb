@@ -1,0 +1,10 @@
+
+<h2> Read and write reviews about your professors! Your GPA depends on it. </h2>
+
+<%= form_for @user do |f| %>
+<%= f.label :username %>
+<%= f.text_field :username %>
+<%= f.label :password %>
+<%= f.password_field :password %>
+<%= f.submit "Create User" %>
+<% end %>
