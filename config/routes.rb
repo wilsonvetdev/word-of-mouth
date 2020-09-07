@@ -3,8 +3,6 @@ Rails.application.routes.draw do
 
 
   root 'professors#index'
-  get '/professors/new', to: 'professors#new', as: :new_professor 
-  post '/professors', to: 'professors#create'
   get '/professors/:id', to: 'professors#show', as: :professor
 
   get '/colleges', to: 'colleges#index'
@@ -21,5 +19,10 @@ Rails.application.routes.draw do
 
   get '/reviews/new', to: 'reviews#new', as: :new_review
   post '/reviews', to: 'reviews#create'
+
+  get '/workplaces/new', to: 'workplaces#new', as: :new_workplace
+  post '/workplaces', to: 'workplaces#create'
+
+  
 
 end

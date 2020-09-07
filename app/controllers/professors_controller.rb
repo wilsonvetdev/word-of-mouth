@@ -4,17 +4,9 @@ class ProfessorsController < ApplicationController
         @professors = Professor.search(params[:search]) 
     end
 
-    def new
-        @professor = Professor.new
-    end
-
     def show
         @professor = Professor.find(params[:id])
         session[:current_professor] = @professor.id
-    end
-
-    def edit 
-
     end
 
     private 
