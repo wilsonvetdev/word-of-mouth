@@ -1,5 +1,6 @@
 class College < ApplicationRecord
     has_many :workplaces
+    has_many :professors, through: :workplaces
 
     def self.search(search_param)
         if search_param 
