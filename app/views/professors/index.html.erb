@@ -1,29 +1,33 @@
+<div class="jumbotron jumbotron-fluid mt-5">
+    <div class="container d-flex justify-content-center">
+            <%= form_tag "/", :method => 'get' do%>
+            <div class="form-group">
+            <%= label_tag "search", "Type in a professor's name" %>
+            <%= text_field_tag :search, params[:search], class: "form-control" %>
+            </div>
+            <%= submit_tag 'Search Professor', class: "btn btn-danger"%>
+            <% end %>
+    </div>
+</div>
 
-<%= form_tag "/", :method => 'get' do%>
-<%= text_field_tag :search, params[:search] %>
-<%= submit_tag 'Search Professors'%>
-<% end %>
-
-<table>
+<div class="container p-5">
+<table class="table table-bordered">
     <thead>
-    <tr>
-    <th>First Name</th>
-    <th>Last Name</th>
-    <th>Department</th>
-    </tr>
+        <tr>
+            <th scope="col">First Name</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">See Reviews</th>
+        </tr>
     </thead>
 
     <tbody>
-    <% @professors.each do |professor| %>
-    <tr>
-        <td> <%= professor.first_name %> </td>
-        <td> <%= professor.last_name %> </td>
-        <td> <%= link_to 'show', professor_path(professor) %> </td>
-    </tr>
-    <% end %>
+        <% @professors.each do |professor| %>
+        <tr>
+            <td> <%= professor.first_name %> </td>
+            <td> <%= professor.last_name %> </td>
+            <td> <%= link_to 'show', professor_path(professor) %> </td>
+        </tr>
+        <% end %>
     </tbody>
 </table>
-
-<br>
-
-<%#= link_to 'add a new professor', new_professor_path %>
+</div>

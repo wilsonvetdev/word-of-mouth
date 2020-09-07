@@ -14,7 +14,8 @@ class ReviewsController < ApplicationController
         if @review.save
             redirect_to professor_path(@current_professor)
         else
-            flash[:error] = @review.errors.full_messages[0]
+            flash[:error] = @review.errors.messages[:professor_id][0]
+            byebug
             redirect_to new_review_path
         end
     end
