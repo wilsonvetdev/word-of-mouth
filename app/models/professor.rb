@@ -5,7 +5,6 @@ class Professor < ApplicationRecord
     
     validates :first_name, presence: true
     validates :last_name, presence: true
-    validates :department, presence: true
 
     def self.search(search_param)
         if search_param 

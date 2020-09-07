@@ -43,7 +43,7 @@ end
 # -------------------------------------------- Seed Professors -------------------------------------------------- #
 
 50.times do 
-    Professor.create!(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, department: Faker::Educator.subject)
+    Professor.create!(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name)
 end
 
 # -------------------------------------------- Seed Users -------------------------------------------------- #
@@ -57,7 +57,7 @@ User.create!(username: "sailormoon", password: "abc123")
 # -------------------------------------------- Seed Workplaces(joiner)-------------------------------------------------- #
 
 50.times do
-    Workplace.create!(college_id: rand(1..10), professor: Professor.all.sample)
+    Workplace.create!(college_id: rand(1..10), professor: Professor.all.sample, department: Faker::Educator.subject)
 end 
 
 # -------------------------------------------- Seed Reviews(joiner)-------------------------------------------------- #
