@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_04_212551) do
+ActiveRecord::Schema.define(version: 2020_09_07_031420) do
 
   create_table "colleges", force: :cascade do |t|
     t.string "name"
@@ -23,7 +23,6 @@ ActiveRecord::Schema.define(version: 2020_09_04_212551) do
   create_table "professors", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
-    t.string "department"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -39,6 +38,12 @@ ActiveRecord::Schema.define(version: 2020_09_04_212551) do
     t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
+  create_table "searches", force: :cascade do |t|
+    t.string "keywords"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "username"
     t.string "password_digest"
@@ -51,6 +56,7 @@ ActiveRecord::Schema.define(version: 2020_09_04_212551) do
     t.integer "professor_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "department"
     t.index ["college_id"], name: "index_workplaces_on_college_id"
     t.index ["professor_id"], name: "index_workplaces_on_professor_id"
   end

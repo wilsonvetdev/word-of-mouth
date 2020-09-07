@@ -3,7 +3,7 @@
 
 <ul>
 <% @professors.each do |professor|%>
-    <li> <%= link_to professor.full_name, professor_path %> </li>
+    <li> <%= link_to professor.full_name, professor_path(professor) %> </li>
     <% professor.reviews.each do |review| %>
     <p> <%= review.content %> </p>
     <% end %>

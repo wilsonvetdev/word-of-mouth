@@ -2,11 +2,9 @@ class Professor < ApplicationRecord
     has_many :workplaces
     has_many :reviews
     has_many :colleges, through: :workplaces
-    accepts_nested_attributes_for :workplaces
     
     validates :first_name, presence: true
     validates :last_name, presence: true
-    validates :department, presence: true
 
     def self.search(search_param)
         if search_param 

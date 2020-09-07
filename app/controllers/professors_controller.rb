@@ -12,7 +12,7 @@ class ProfessorsController < ApplicationController
     private 
 
     def professor_params 
-        params.require(:professor).permit(:first_name, :last_name, :department, :search)
+        params.require(:professor).permit(:first_name, :last_name, :search)
     end
 
 end
