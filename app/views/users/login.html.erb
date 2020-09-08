@@ -1,13 +1,29 @@
-<h1> Log in page </h1>
+<div class="container mt-5">
 
-<% if @error %>
-<p> <%= @error %> </p>
-<% end %>
+    <div class="jumbotron jumbotron-fluid mt-5">
+        <div class="row justify-content-center">
+            <h2 class="text-danger mb-5"> Read and write reviews about your professors! Your GPA depends on it. </h2>
+        </div>
+        <div class="container d-flex justify-content-center">
+            <div class="form-group">
+                <%= form_tag "/handle_login" do %>
+                <%= label_tag :username %>
+                <%= text_field_tag :username %>
+                <%= label_tag :password %>
+                <%= password_field_tag :password %>
+                <%= submit_tag "Sign In", class: "btn btn-danger ml-4" %>
+                <% end %>
+            </div>
+        </div>
+    </div>
 
-<%= form_tag "/handle_login" do %>
-<%= label_tag :username %>
-<%= text_field_tag :username %>
-<%= label_tag :password %>
-<%= password_field_tag :password %>
-<%= submit_tag "Sign In" %>
-<% end %>
+    <% if @error %>
+    <div class="alert alert-danger" role="alert">
+        <%= @error %>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <% end %>
+
+</div>
