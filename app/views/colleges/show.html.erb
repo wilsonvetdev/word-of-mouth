@@ -1,11 +1,33 @@
-<h1> <%= @college.name %> </h1>
-<h2> <%= link_to "Add a professor to this college", new_workplace_path %>
+<div class="container-fluid">
 
-<ul>
-<% @professors.each do |professor|%>
-    <li> <%= link_to professor.full_name, professor_path(professor) %> </li>
-    <% professor.reviews.each do |review| %>
-    <p> <%= review.content %> </p>
-    <% end %>
-<% end %>
-</ul>
+    <div class="row">
+        <h3> College Name: <%= @college.name %> </h3>
+    </div>
+
+    <div class="row">
+        <h3> City: <%= @college.city %> </h3>
+    </div>
+
+    <div class="row">
+        <h3> State: <%= @college.state %> </h3>
+    </div>
+
+    <div class="row">
+        <p> code average rating of all professors for this college here </p>
+    </div>
+
+    <div class="row">
+        <p> <%= link_to "Add a professor to this college", new_workplace_path %> </p>
+    </div>
+
+    <div class="row">
+
+        <% @professors.each do |professor|%>
+        <div class="col-3 mb-3">
+            <%= link_to professor.full_name, professor_path(professor) %>
+        </div>
+        <% end %>
+
+        </ul>
+    </div>
+</div>

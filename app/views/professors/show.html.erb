@@ -1,12 +1,12 @@
 <div class="container">
-    <div class="row justify-content-center">
-        <h1> Professor show page </h1>
-    </div>
-    <div class="row justify-content-center">
+    <div class="row justify-content-center mt-3">
         <h2> <%= @professor.full_name %> </h2>
     </div>
+    <div class="row justify-content-center">
+        <p> code average rating of this professor here </p>
+    </div>
     <div class="row  justify-content-center">
-        <h2> <%= link_to "create review for this professor", new_review_path %> </h2>
+        <p> <%= link_to "create review for this professor", new_review_path %> </p>
     </div>
     <div class="row justify-content-center">
         <h3> Reviews: </h3>

@@ -1,9 +1,18 @@
-<h1> Add a Professor for <%= @current_college.name %> </h1>
+<div class="container-fluid">
+    <div class="row justify-content-center mt-3">
+        <h1> Add a Professor for <%= @current_college.name %> </h1>
+    </div>
 
-<%= form_for @workplace do |f| %>
-<%= f.label "first name and last name ex: John Doe/Jane Doe"%>
-<%= f.text_field :professor %>
-<%= f.label "Department" %>
-<%= f.text_field :department%>
-<%= f.submit "Add a professor" %>
-<% end %>
+    <div class="row justify-content-center mt-3">
+    <div class="form-group">
+        <%= form_for @workplace do |f| %>
+        <%= f.label "first name and last name ex: John Doe/Jane Doe"%>
+        <%= f.text_field :professor, class: "form-control" %>
+        <%= f.label "Department" %>
+        <%= f.text_field :department, class: "form-control" %>
+        <%= f.submit "Add a professor", class: "btn btn-danger ml-4 mt-4" %>
+        <% end %>
+    </div>
+    </div>
+
+</div>
