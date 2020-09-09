@@ -1,18 +1,33 @@
-<h1> Professor show page </h1>
-<h2> <%= @professor.full_name %> </h2>
+<div class="container">
+    <div class="row justify-content-center mt-3">
+        <h2> <%= @professor.full_name %> </h2>
+    </div>
+    <div class="row justify-content-center">
+        <p> code average rating of this professor here </p>
+    </div>
+    <div class="row  justify-content-center">
+        <p> <%= link_to "create review for this professor", new_review_path %> </p>
+    </div>
+    <div class="row justify-content-center">
+        <h3> Reviews: </h3>
+    </div>
 
-    <h2> <%= link_to "create review for this professor", new_review_path %> </h2>
 
-    <h2> Reviews here </h2>
 
-    <div class="container">
-        <div class="row">
-            <div class="col">
-                <% @professor.reviews.each do |review| %>
-                <ul>
-                    <li> <%= review.rating %> - <%= review.content %> - <%= review.created_at.strftime("%F") %></li>
-                </ul>
-                <% end %>
+    <div class="row justify-content-around">
+
+        <% @professor.reviews.each do |review| %>
+        <div class="col-sm-6 mt-5">
+            <div class="card text-center">
+                <div class="card-body">
+                    <h5 class="card-title"> <%= "Rating: #{review.rating}" %> </h5>
+                    <h6 class="card-subtitle mb-2 text-muted"> <%= review.created_at.strftime("%F") %> </h6>
+                    <p> <%= review.content %> </p>
+                </div>
             </div>
         </div>
+        <% end %>
     </div>
+
+
+</div>

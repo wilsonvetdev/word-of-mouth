@@ -25,7 +25,12 @@ class UsersController < ApplicationController
     end
 
     def new 
-        @user = User.new
+        if user_logged_in? # method in application controller
+            redirect_to user_path(@current_user)
+            # if user already logged in, just redirect to show page of user
+        else
+            @user = User.new
+        end
     end
 
     def create 

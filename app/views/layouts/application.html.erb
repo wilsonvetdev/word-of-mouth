@@ -5,26 +5,50 @@
   <title>WordOfMouth</title>
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
 </head>
 
-<body>
-  <nav>
-    <h1> <%= link_to "Word Of Mouth", "/" %> <h1>
-        <div>
-          <ul>
-          <% if user_logged_in? %>
-            <li> Hi <%= @current_user.username %> </li>
-            <li> <%= button_to "Log out", logout_path, method: :delete %> </li>
-          <% else %>
-            <li> <%= link_to "Log In", login_path %> </li>
-          <% end %>
-          </ul>
-        </div>
+<body class="p-5">
+
+  <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
+    <%= link_to "Word Of Mouth", "/", class: "navbar-brand mr-0 mr-md-2 text-danger" %>
+
+    <ul class="navbar-nav ml-md-auto">
+      <% if user_logged_in? %>
+      <li class="nav-item mr-3">
+        <%= link_to "Hi #{@current_user.username}", user_path(@current_user), class: "nav-link" %>
+      </li class="nav-item">
+      <li> <%= button_to "Log out", logout_path, class: "btn btn-outline-danger my-2 my-sm-0", method: :delete %>
+      </li>
+      <% else %>
+      <li class="nav-item mr-3">
+        <%= button_to "Sign Up", new_user_path, class: "btn btn-outline-danger my-2 my-sm-0", method: :get %>
+      </li>
+      <li class="nav-item">
+        <%= button_to"Log In", login_path, class: "btn btn-outline-danger my-2 my-sm-0", method: :get %>
+      </li>
+      <% end %>
+    </ul>
+
   </nav>
+
   <%= yield %>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+  </script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+  </script>
 </body>
 
 </html>

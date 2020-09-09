@@ -1,29 +1,40 @@
+<div class="jumbotron jumbotron-fluid mt-5">
+    <div class="container d-flex justify-content-center">
+        <%= form_tag colleges_path, :method => 'get' do%>
+        <div class="form-group">
+            <%= label_tag "Type in a college name: "%>
+            <%= text_field_tag :search, params[:search], class: "form-control" %>
+            <%= submit_tag 'Search Colleges', class: "btn btn-danger ml-4 mt-4" %>
+        </div>
+        <% end %>
+    </div>
+</div>
 
-<%= form_tag colleges_path, :method => 'get' do%>
-<%= text_field_tag :search, params[:search] %>
-<%= submit_tag 'Search Colleges'%>
-<% end %>
 
 <% if @query %>
-<table>
-    <thead>
-    <tr>
-    <th>Name</th>
-    <th>City</th>
-    <th>State</th>
-    </tr>
-    </thead>
 
-    <tbody>
-    <% @colleges.each do |college| %>
-    <tr>
-        <td> <%= college.name %> </td>
-        <td> <%= college.city %> </td>
-        <td> <%= college.state %> </td>
-        <td> <%= link_to 'show', college_path(college) %> </td>
+<div class="container p-5">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>City</th>
+                <th>State</th>
+                <th>Link</th>
+            </tr>
+        </thead>
 
-    </tr>
+        <tbody>
+            <% @colleges.each do |college| %>
+            <tr>
+                <td> <%= college.name %> </td>
+                <td> <%= college.city %> </td>
+                <td> <%= college.state %> </td>
+                <td> <%= link_to 'show', college_path(college) %> </td>
+            </tr>
+            <% end %>
+        </tbody>
+    </table>
     <% end %>
-    </tbody>
-</table>
-<% end %>
+
+</div>
