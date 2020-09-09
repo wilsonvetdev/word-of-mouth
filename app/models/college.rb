@@ -4,9 +4,10 @@ class College < ApplicationRecord
 
     def self.search(search_param)
         if search_param 
-            @colleges = where(["name LIKE ? OR city LIKE ? OR state LIKE ?", "%#{search_param}%", "%#{search_param}%", "%#{search_param}%"]) 
+            where(["name LIKE ? OR city LIKE ? OR state LIKE ?", "%#{search_param}%", "%#{search_param}%", "%#{search_param}%"]) 
+            # https://api.rubyonrails.org/classes/ActiveRecord/FinderMethods.html
         else 
-            @colleges = College.all
+            College.all
         end
     end
 

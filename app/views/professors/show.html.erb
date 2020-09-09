@@ -1,4 +1,16 @@
 <div class="container">
+
+    <% if @success %>
+    <div class="row justify-content-center mt-3">
+    <div class="alert alert-success" role="alert">
+        <%= @success %>
+        <button type="button" class="close ml-3" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    </div>
+    <% end %>
+
     <div class="row justify-content-center mt-3">
         <h2> <%= @professor.full_name %> </h2>
     </div>
@@ -11,8 +23,6 @@
     <div class="row justify-content-center">
         <h3> Reviews: </h3>
     </div>
-
-
 
     <div class="row justify-content-between">
 

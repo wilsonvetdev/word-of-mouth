@@ -16,6 +16,7 @@ class ReviewsController < ApplicationController
         #please refer to workplace controller create action for my reasoning of above code.
         @review = Review.create(review_params)
         if @review.valid?
+            flash[:success] = "Review successfully added!"
             redirect_to professor_path(@current_professor)
         else
             flash[:error] = @review.errors.messages[:professor_id][0]

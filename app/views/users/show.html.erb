@@ -9,10 +9,10 @@
     <div class="row justify-content-center">
         <% @current_user.reviews.each do |review| %>
         <div class="card text-center w-50 m-3 text-white bg-danger mb-3">
-            <div class="card-body">
-                <h5 class="card-title">
+                <h5 class="card-header bg-secondary">
                     <p> <%= review.professor.full_name %> </p>
                 </h5>
+            <div class="card-body">
                 <h6 class="card-subtitle mb-2 text-white"> <%= "Rating: #{review.rating}" %> </h6>
                 <h6 class="card-subtitle mb-2 text-white"> <%= review.created_at.strftime("%F") %> </h6>
                 <p> <%= review.content %> </p>
