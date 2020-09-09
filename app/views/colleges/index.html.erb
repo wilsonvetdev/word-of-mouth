@@ -1,13 +1,15 @@
 <div class="jumbotron jumbotron-fluid mt-5">
+
     <div class="container d-flex justify-content-center">
         <%= form_tag colleges_path, :method => 'get' do%>
         <div class="form-group">
-            <%= label_tag "Type in a college name: "%>
+            <%= label_tag "search", "Type in a college name: "%>
             <%= text_field_tag :search, params[:search], class: "form-control" %>
             <%= submit_tag 'Search Colleges', class: "btn btn-danger ml-4 mt-4" %>
         </div>
         <% end %>
     </div>
+
 </div>
 
 
@@ -35,6 +37,37 @@
             <% end %>
         </tbody>
     </table>
+
+    <% else %>
+
+    <div class="row justify-content-center">
+        <h3> Our Three Most Popular Colleges By Professor Count: <h3>
+    </div>
+
+    <div class="row justify-content-around">
+        <% @most_popular_by_professor_count.each do |college| %>
+        <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 mt-4">
+            <div class="card text-center text-white bg-danger mb-3">
+                <div class="card-header">
+                    <%= link_to college.name, college_path(college), class: "text-white" %>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">
+                        <% if !college.review_average.nan? %>
+                            <%= "Rating: #{college.review_average}" %>
+                        <% else %>
+                            <span> *no reviews to compute average yet* </span>
+                        <% end %>
+                    </h5>
+                    <h6 class="card-subtitle mb-2 text-white">
+                        <%= "Total Professors: #{college.professors.count}" %>
+                    </h6>
+                </div>
+            </div>
+        </div>
+        <% end %>
+    </div>
+
     <% end %>
 
 </div>

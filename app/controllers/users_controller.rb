@@ -43,6 +43,11 @@ class UsersController < ApplicationController
         end
     end
 
+    def show 
+        @delete_success = flash[:delete_success]
+        @edit_success = flash[:edit_success]
+    end
+
     private 
 
     def user_params 

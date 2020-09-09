@@ -4,6 +4,17 @@
             <h2 class="text-danger mb-5"> Read and write reviews about your professors! Your GPA depends on it. </h2>
         </div>
 
+        <% if @error %>
+        <div class="row justify-content-center mt-3">
+            <div class="alert alert-danger" role="alert">
+                <%= @error %>
+                <button type="button" class="close ml-3" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        </div>
+        <% end %>
+
         <div class="container d-flex justify-content-center">
             <div class="col text-right">
                 <%= form_tag "/handle_login" do %>
@@ -15,7 +26,7 @@
                     <%= label_tag :password %>
                     <%= password_field_tag :password %>
                 </div>
-                <%= submit_tag "Sign In", class: "btn btn-danger ml-4" %>
+                <%= submit_tag "Log In", class: "btn btn-danger ml-4" %>
                 <% end %>
             </div>
             <div class="col">
@@ -25,12 +36,3 @@
 
     </div>
 </div>
-
-<% if @error %>
-<div class="alert alert-danger" role="alert">
-    <%= @error %>
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-    </button>
-</div>
-<% end %>

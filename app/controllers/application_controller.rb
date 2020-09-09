@@ -12,7 +12,10 @@ class ApplicationController < ActionController::Base
     end
 
     def authorized_access
-        redirect_to login_path unless user_logged_in?
+        unless user_logged_in?
+            flash[:error] = "You must be logged in to access the previous section."
+            redirect_to login_path 
+        end
     end
 
 end
