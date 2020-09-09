@@ -22,7 +22,13 @@
     </div>
 
     <div class="row">
-        <p> code average rating of all professors for this college here </p>
+        <p> Review Average: 
+            <% if !@college.review_average.nan? %>
+                <%= @college.review_average %> 
+            <% else %>
+                <span> *no reviews to compute average yet* </span>
+            <% end %>
+        </p>
     </div>
 
     <div class="row">

@@ -17,4 +17,11 @@ class Professor < ApplicationRecord
     def full_name 
         "#{self.first_name} #{self.last_name}"
     end
+
+    def get_review_avg
+        total_reviews = self.reviews.count
+        ratings_sum = self.reviews.pluck(:rating).sum
+        (ratings_sum / total_reviews.to_f).round(2)
+    end
+
 end
