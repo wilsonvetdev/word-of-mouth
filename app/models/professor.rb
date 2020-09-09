@@ -24,4 +24,9 @@ class Professor < ApplicationRecord
         (ratings_sum / total_reviews.to_f).round(2)
     end
 
+    def self.most_reviewed_three
+        Professor.all.sort_by { |professor| professor.reviews.count }.reverse[0..2]
+        # Sort all professors by their reviews count, then reverse the order of the returned array and grab the firs three elements.
+    end
+
 end

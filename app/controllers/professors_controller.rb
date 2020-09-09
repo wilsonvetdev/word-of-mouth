@@ -1,7 +1,9 @@
 class ProfessorsController < ApplicationController
 
     def index 
-        @professors = Professor.search(params[:search]) 
+        @query = params[:search] # @query used in views as well
+        @professors = Professor.search(@query) # logic in model
+        @most_reviewed_three = Professor.most_reviewed_three
     end
 
     def show

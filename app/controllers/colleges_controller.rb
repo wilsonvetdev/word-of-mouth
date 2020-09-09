@@ -1,8 +1,9 @@
 class CollegesController < ApplicationController
 
     def index 
-        @query = params[:search]
-        @colleges = College.search(params[:search])  # logic in model
+        @query = params[:search] # @query used in views as well
+        @colleges = College.search(@query)  # logic in model
+        @most_popular_by_professor_count = College.most_popular_by_professor_count
     end
 
     def show 

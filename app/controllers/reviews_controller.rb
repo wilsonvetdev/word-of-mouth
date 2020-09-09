@@ -35,12 +35,14 @@ class ReviewsController < ApplicationController
     def update
         @review = Review.find_by(id: params[:id])
         @review.update(review_params)
+        flash[:edit_success] = "Your update to the review of #{@review.professor.full_name} was successful!"
         redirect_to user_path(@current_user)
     end
 
     def destroy
         @review = Review.find_by(id: params[:id])
         @review.destroy
+        flash[:delete_success] = "You succesfully deleted a review for #{@review.professor.full_name}!"
         redirect_to user_path(@current_user)
     end
 

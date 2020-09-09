@@ -29,4 +29,10 @@ class College < ApplicationRecord
         (self.all_reviews_total_num / self.amount_of_reviews.to_f).round(2)
     end
 
+    def self.most_popular_by_professor_count
+        result = College.all.reject { |college| college.professors.count == 0}
+        result.sort_by {|college| college.professors.count }.reverse[0..2]
+        # sort colleges based on professor count, reverse the array order and grab the first three element.
+    end
+
 end
