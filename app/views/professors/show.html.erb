@@ -17,7 +17,7 @@
     <div class="row justify-content-md-center">
         <% @professor.workplaces.each do |workplace| %>
             <div class="col-md-auto">
-                <p> Department: <%= workplace.department %> </p>
+                <p> Workplace: <%= workplace.college.name %> </p>
             </div>
         <% end %>
     </div>
