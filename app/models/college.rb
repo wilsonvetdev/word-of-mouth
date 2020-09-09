@@ -4,10 +4,29 @@ class College < ApplicationRecord
 
     def self.search(search_param)
         if search_param 
-            @colleges = where(["name LIKE ? OR city LIKE ? OR state LIKE ?", "%#{search_param}%", "%#{search_param}%", "%#{search_param}%"]) 
+            where(["name LIKE ? OR city LIKE ? OR state LIKE ?", "%#{search_param}%", "%#{search_param}%", "%#{search_param}%"]) 
+            # https://api.rubyonrails.org/classes/ActiveRecord/FinderMethods.html
         else 
-            @colleges = College.all
+            College.all
         end
+    end
+
+    def amount_of_reviews
+        professors = self.professors
+        professors.map { |professor| professor.reviews.count }.sum
+        # get all the reviews of each professor and count them, then sum all of the reviews up.
+        # output example: [1, 5, 6, 4], then sum would be 16.
+    end
+
+    def all_reviews_total_num
+        review_ratings = self.professors.map { |professor| professor.reviews.pluck(:rating) }
+        # output example: [[1], [2, 3], [2, 3], [3, 5], [4]]
+        review_ratings.flatten.sum
+        # flatten the array to take away the nested arrays
+    end
+
+    def review_average
+        (self.all_reviews_total_num / self.amount_of_reviews.to_f).round(2)
     end
 
 end

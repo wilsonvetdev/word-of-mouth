@@ -1,4 +1,13 @@
-<div class="container-fluid mt-5">
+<div class="container mt-5">
+
+    <% if @success %>
+    <div class="alert alert-success" role="alert">
+        <%= @success %>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <% end %>
 
     <div class="row">
         <h3> College Name: <%= @college.name %> </h3>
@@ -13,7 +22,13 @@
     </div>
 
     <div class="row">
-        <p> code average rating of all professors for this college here </p>
+        <p> Review Average: 
+            <% if !@college.review_average.nan? %>
+                <%= @college.review_average %> 
+            <% else %>
+                <span> *no reviews to compute average yet* </span>
+            <% end %>
+        </p>
     </div>
 
     <div class="row">

@@ -4,6 +4,7 @@ class WorkplacesController < ApplicationController
         @workplace = Workplace.new
         @current_college = College.find_by(id: session[:current_college]) # from college show action
         @professor = Professor.new
+        @error = flash[:error]
     end
 
     def create 
@@ -21,8 +22,13 @@ class WorkplacesController < ApplicationController
         # I wanted to make sure I am still incorporating strong params, so I am manipulating the params here and assigning the keys inside the params its value
         # -before the params reaches the Workplace.create.
         # I believe if I used nested routes and/or custom actions, my life probably would have been a lot easier.
-        
-        redirect_to college_path(@current_college)
+        if @professor.valid? && @workplace.valid?
+            flash[:success] = "You succesfully added a professor to this school!"
+            redirect_to college_path(@current_college)
+        else
+            flash[:error] = "Something went wrong! Don't leave any fields blank."
+            redirect_to new_workplace_path
+        end
     end
 
     private 
