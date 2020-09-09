@@ -31,7 +31,7 @@
 
     <div class="row justify-content-center">
         <% @current_user.reviews.each do |review| %>
-        <div class="card text-center w-50 m-3 text-white bg-danger mb-3">
+        <div class="card text-center text-white bg-danger col-lg-4 col-md-3 col-sm-12 col-xs-12 m-5">
             <h5 class="card-header bg-secondary">
                 <p> <%= link_to review.professor.full_name, professor_path(review.professor), class: "text-white" %>
                 </p>

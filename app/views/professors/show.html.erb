@@ -14,6 +14,13 @@
     <div class="row justify-content-center mt-3">
         <h2> <%= @professor.full_name %> </h2>
     </div>
+    <div class="row justify-content-md-center">
+        <% @professor.workplaces.each do |workplace| %>
+            <div class="col-md-auto">
+                <p> Department: <%= workplace.department %> </p>
+            </div>
+        <% end %>
+    </div>
     <div class="row justify-content-center">
         <p> Review Average: 
             <% if !@professor.get_review_avg.nan? %>
@@ -23,7 +30,7 @@
             <% end %>
         </p>
     </div>
-    <div class="row  justify-content-center">
+    <div class="row justify-content-center">
         <p> <%= link_to "create review for this professor", new_review_path %> </p>
     </div>
     <div class="row justify-content-center">
@@ -33,7 +40,7 @@
     <div class="row justify-content-between">
 
         <% @professor.reviews.each do |review| %>
-        <div class="col-sm-6 mt-5">
+        <div class="col-lg-6 col-md-4 col-sm-12 col-xs-12 mt-5">
             <div class="card text-center text-white bg-danger mb-3">
                 <div class="card-body">
                     <h5 class="card-title"> <%= "Rating: #{review.rating}" %> </h5>
