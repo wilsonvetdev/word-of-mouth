@@ -14,20 +14,20 @@
 
 
 
-        <div class="row justify-content-around">
+    <div class="row justify-content-around">
 
-            <% @professor.reviews.each do |review| %>
-            <div class="col-sm-6 mt-5">
-                <div class="card text-center">
-                    <div class="card-body">
-                        <h5 class="card-title"> <%= "Rating: #{review.rating}" %> </h5>
-                        <p> <%= review.created_at.strftime("%F") %> </p>
-                        <h6 class="card-subtitle mb-2 text-muted"> <%= review.content %> </h6>
-                    </div>
+        <% @professor.reviews.each do |review| %>
+        <div class="col-sm-6 mt-5">
+            <div class="card text-center">
+                <div class="card-body">
+                    <h5 class="card-title"> <%= "Rating: #{review.rating}" %> </h5>
+                    <h6 class="card-subtitle mb-2 text-muted"> <%= review.created_at.strftime("%F") %> </h6>
+                    <p> <%= review.content %> </p>
                 </div>
             </div>
-            <% end %>
         </div>
+        <% end %>
+    </div>
 
 
 </div>

@@ -1,20 +1,21 @@
-
 <div class="container-fluid">
-
     <div class="row justify-content-center mt-3">
         <h1> Add a Professor for <%= @current_college.name %> </h1>
     </div>
 
     <div class="row justify-content-center mt-3">
+        <%= form_for @workplace do |f| %>
         <div class="form-group">
-            <%= form_for @workplace do |f| %>
             <%= f.label :professor, "Professor name(John Doe/Jane Doe)" %>
             <%= f.text_field :professor, class: "form-control" %>
+        </div>
+        <div class="form-group">
             <%= f.label :department %>
             <%= f.text_field :department, class: "form-control" %>
-            <%= f.submit "Add a professor", class: "btn btn-danger ml-4 mt-4" %>
+        </div>
+        <div class="row justify-content-center">
+            <%= f.submit "Add a professor", class: "btn btn-danger" %>
             <% end %>
         </div>
     </div>
-
 </div>
