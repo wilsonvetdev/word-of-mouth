@@ -21,10 +21,13 @@
         </div>
     </div>
     <% end %>
-
+    
+    <% if user_logged_in? %>
     <div class="row justify-content-center mt-3">
         <h2> <%= @current_user.username %>'s profile page </h2>
     </div>
+    <% end %>
+    
     <div class="row justify-content-center">
         <h3> Your Reviews Here: </h3>
     </div>
