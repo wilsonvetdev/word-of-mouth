@@ -8,17 +8,17 @@
 
     <div class="row justify-content-center">
         <% @current_user.reviews.each do |review| %>
-        <div class="card text-center w-50 m-3">
+        <div class="card text-center w-50 m-3 text-white bg-danger mb-3">
             <div class="card-body">
                 <h5 class="card-title">
                     <p> <%= review.professor.full_name %> </p>
                 </h5>
-                <h6 class="card-subtitle mb-2 text-muted"> <%= "Rating: #{review.rating}" %> </h6>
-                <h6 class="card-subtitle mb-2 text-muted"> <%= review.created_at.strftime("%F") %> </h6>
+                <h6 class="card-subtitle mb-2 text-white"> <%= "Rating: #{review.rating}" %> </h6>
+                <h6 class="card-subtitle mb-2 text-white"> <%= review.created_at.strftime("%F") %> </h6>
                 <p> <%= review.content %> </p>
                 <div class="row justify-content-end">
-                <%= link_to "Edit", edit_review_path(review.id), class: "mr-2"%>
-                <%= link_to "Delete", review, :method => :delete, class: "mr-2" %>
+                <%= button_to "Edit", edit_review_path(review.id), class: "btn btn-secondary mr-2"%>
+                <%= button_to "Delete", review, :method => :delete, class: "btn btn-secondary mr-2" %>
                 </div>
             </div>
         </div>
