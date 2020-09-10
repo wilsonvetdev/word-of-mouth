@@ -41,7 +41,7 @@
 
         <% @professor.reviews.each do |review| %>
         <div class="col-lg-6 col-md-4 col-sm-12 col-xs-12 mt-5">
-            <div class="card text-center text-white bg-danger mb-3">
+            <div class="card text-center text-white bg-secondary mb-3">
                 <div class="card-body">
                     <h5 class="card-title"> <%= "Rating: #{review.rating}" %> </h5>
                     <h6 class="card-subtitle mb-2 text-white"> Date Submitted: <%= review.created_at.strftime("%F") %> </h6>
