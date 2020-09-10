@@ -31,7 +31,7 @@ This web app employs the following technologies(not inclusive):
 https://nces.ed.gov/ipeds/datacenter/InstitutionByName.aspx
 
 
-## SETUP
+## Set-Up
 
 1. clone this repo to your local environment -- git clone < git repository >
 2. cd(change directory) into the repo
@@ -41,7 +41,12 @@ https://nces.ed.gov/ipeds/datacenter/InstitutionByName.aspx
 6. rails s to start the server
 7. go to your browser and type in localhost:3000 to explore the app
 
-## Sample
+## What's Next?
 
+Database schema will need to be updated with more tables to add more features.
+Frontend will also be greatly improved, and will be revisited in the future after the end of the Web Dev Fellowship at Flatiron.
 
-
+Nice to have features(not final):
+* Password recovery
+* Editing profile page for user
+* Pagination
