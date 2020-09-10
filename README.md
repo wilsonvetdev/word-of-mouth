@@ -24,6 +24,7 @@ This web app employs the following technologies(not inclusive):
 * Faker - seed fake data for rendering and behavior driven development purposes
 * Bcrypt - authorization and authentication
 * CSV - Gem that provides a complete interface to CSV files and data
+* Bootstrap 4 - styling and displaying flash messages
 
 
 ## Data Source
