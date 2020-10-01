@@ -1,6 +1,8 @@
 ## Word Of Mouth
 
-Word Of Mouth is an app for students to read and/or write reviews about their professors. * Not deployed *
+Word Of Mouth is an app for students to read and/or write reviews about their professors. 
+The application also allows a user to add a professor to a college of their choice. Search functionalities of colleges and professors are also included. 
+* Not deployed *
 
 
 ## General Info
@@ -51,3 +53,16 @@ Nice to have features(not final):
 * Password recovery
 * Editing profile page for user
 * Pagination
+
+## Sample Images(video walk-through coming soon):
+
+![sample image of project](https://github.com/wilsonvetdev/word-of-mouth/blob/master/app/assets/images/Screen%20Shot%202020-10-01%20at%205.00.12%20PM.png)
+![sample image of project](https://github.com/wilsonvetdev/word-of-mouth/blob/master/app/assets/images/Screen%20Shot%202020-10-01%20at%205.00.22%20PM.png)
+![sample image of project](https://github.com/wilsonvetdev/word-of-mouth/blob/master/app/assets/images/Screen%20Shot%202020-10-01%20at%205.00.33%20PM.png)
+![sample image of project](https://github.com/wilsonvetdev/word-of-mouth/blob/master/app/assets/images/Screen%20Shot%202020-10-01%20at%205.01.09%20PM.png)
+![sample image of project](https://github.com/wilsonvetdev/word-of-mouth/blob/master/app/assets/images/Screen%20Shot%202020-10-01%20at%205.01.40%20PM.png)
+![sample image of project](https://github.com/wilsonvetdev/word-of-mouth/blob/master/app/assets/images/Screen%20Shot%202020-10-01%20at%205.02.14%20PM.png)
+![sample image of project](https://github.com/wilsonvetdev/word-of-mouth/blob/master/app/assets/images/Screen%20Shot%202020-10-01%20at%205.02.26%20PM.png)
+![sample image of project](https://github.com/wilsonvetdev/word-of-mouth/blob/master/app/assets/images/Screen%20Shot%202020-10-01%20at%205.02.33%20PM.png)
+![sample image of project](https://github.com/wilsonvetdev/word-of-mouth/blob/master/app/assets/images/Screen%20Shot%202020-10-01%20at%205.02.49%20PM.png)
+
