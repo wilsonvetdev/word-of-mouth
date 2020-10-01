@@ -56,13 +56,33 @@ Nice to have features(not final):
 
 ## Sample Images(video walk-through coming soon):
 
+**Main Page of the application:**
 ![sample image of project](https://github.com/wilsonvetdev/word-of-mouth/blob/master/app/assets/images/Screen%20Shot%202020-10-01%20at%205.00.12%20PM.png)
+
+**Page of a professor and their reviews:**
 ![sample image of project](https://github.com/wilsonvetdev/word-of-mouth/blob/master/app/assets/images/Screen%20Shot%202020-10-01%20at%205.00.22%20PM.png)
+
+**User gets redirected if they are not logged in and trying to write a review:**
 ![sample image of project](https://github.com/wilsonvetdev/word-of-mouth/blob/master/app/assets/images/Screen%20Shot%202020-10-01%20at%205.00.33%20PM.png)
+
+**Upon logging in, a user can see a history of the reviews they have written:**
 ![sample image of project](https://github.com/wilsonvetdev/word-of-mouth/blob/master/app/assets/images/Screen%20Shot%202020-10-01%20at%205.01.09%20PM.png)
+
+**Search function for professors:**
 ![sample image of project](https://github.com/wilsonvetdev/word-of-mouth/blob/master/app/assets/images/Screen%20Shot%202020-10-01%20at%205.01.40%20PM.png)
+
+**Main page for colleges(it shows the top three with the most activities):**
 ![sample image of project](https://github.com/wilsonvetdev/word-of-mouth/blob/master/app/assets/images/Screen%20Shot%202020-10-01%20at%205.02.14%20PM.png)
+
+**Single page for a college and associated professors:**
 ![sample image of project](https://github.com/wilsonvetdev/word-of-mouth/blob/master/app/assets/images/Screen%20Shot%202020-10-01%20at%205.02.26%20PM.png)
+
+**A form to add a professor to a college:**
 ![sample image of project](https://github.com/wilsonvetdev/word-of-mouth/blob/master/app/assets/images/Screen%20Shot%202020-10-01%20at%205.02.33%20PM.png)
+
+**A form to add a review for a single professor:**
 ![sample image of project](https://github.com/wilsonvetdev/word-of-mouth/blob/master/app/assets/images/Screen%20Shot%202020-10-01%20at%205.02.49%20PM.png)
+
+**Showcasing the search functionality for colleges:**
+![sample image of project](https://stackoverflow.com/questions/14494747/how-to-add-images-to-readme-md-on-github)
 
