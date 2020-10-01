@@ -84,5 +84,5 @@ Nice to have features(not final):
 ![sample image of project](https://github.com/wilsonvetdev/word-of-mouth/blob/master/app/assets/images/Screen%20Shot%202020-10-01%20at%205.02.49%20PM.png)
 
 **Showcasing the search functionality for colleges:**
-![sample image of project](https://stackoverflow.com/questions/14494747/how-to-add-images-to-readme-md-on-github)
+![sample image of project](colleges_list.png)
 
